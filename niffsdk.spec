@@ -48,7 +48,7 @@ Ten pakiet zawiera biblioteki wspó³dzielone NIFF.
 Summary:	NIFF SDK header files and development documentation
 Summary(pl):	Pliki nag³ówkowe i dokumentacja programisty NIFF SDK
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 NIFF SDK header files and development documentation.
@@ -60,7 +60,7 @@ Pliki nag³ówkowe i dokumentacja programisty NIFF SDK.
 Summary:	NIFF SDK static libraries
 Summary(pl):	Statyczne biblioteki NIFF SDK
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 NIFF SDK static libraries.
@@ -97,7 +97,8 @@ cd ..
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 # missing in makefiles
 install niff/include/niff.h $RPM_BUILD_ROOT%{_includedir}
