@@ -1,0 +1,73 @@
+--- niffsdk1.02/riffio/src/lib/stdcriff/Makefile.orig	1996-06-06 05:34:06.000000000 +0200
++++ niffsdk1.02/riffio/src/lib/stdcriff/Makefile	2003-05-09 19:52:19.000000000 +0200
+@@ -4,7 +4,7 @@
+ 
+ include $(pkg_topdir)/mk/top.mk
+ 
+-EXPORT_LIBRARY = stdcriff 
++EXPORT_LIBRARY = stdcriff
+ EXPORT_HEADERS = $(pkg_incdir)/stdcriff.h 
+ 
+ SRCS = stdcriff.c
+diff -u niffsdk1.02/mk.orig/bin.mk niffsdk1.02/mk/bin.mk
+--- niffsdk1.02/mk.orig/bin.mk	1996-06-12 06:58:45.000000000 +0200
++++ niffsdk1.02/mk/bin.mk	2003-05-09 19:59:02.000000000 +0200
+@@ -23,7 +23,7 @@
+ install:: all
+ 	@if [ "$(EXPORT_PROGRAM)" ] ; then \
+ 		echo "Installing $(BIN_TARGET) in $(bindir)" ; \
+-		$(INSTALL_PROGRAM) $(BIN_TARGET) $(bindir) ; \
++		$(INSTALL_PROGRAM) $(BIN_TARGET) $(DESTDIR)$(bindir) ; \
+ 	fi
+ 	
+ uninstall:: 
+diff -u niffsdk1.02/mk.orig/inc.mk niffsdk1.02/mk/inc.mk
+--- niffsdk1.02/mk.orig/inc.mk	1996-05-19 23:39:55.000000000 +0200
++++ niffsdk1.02/mk/inc.mk	2003-05-09 19:59:21.000000000 +0200
+@@ -14,7 +14,7 @@
+ 	@for i in $(EXPORT_HEADERS);\
+ 	do (\
+ 		echo "Installing $$i in $(includedir)" ;\
+-		$(INSTALL_DATA) $$i $(includedir);\
++		$(INSTALL_DATA) $$i $(DESTDIR)$(includedir);\
+ 	   ); done
+ 	
+ uninstall:: 
+diff -u niffsdk1.02/mk.orig/lib.mk niffsdk1.02/mk/lib.mk
+--- niffsdk1.02/mk.orig/lib.mk	1996-05-21 05:52:09.000000000 +0200
++++ niffsdk1.02/mk/lib.mk	2003-05-09 19:59:45.000000000 +0200
+@@ -25,7 +25,7 @@
+ install:: all
+ 	@if [ "$(EXPORT_LIBRARY)" ] ; then \
+ 		echo "Installing $(LIB_TARGET) in $(libdir)" ; \
+-		$(INSTALL_DATA) $(LIB_TARGET) $(libdir) ; \
++		$(INSTALL_DATA) $(LIB_TARGET) $(DESTDIR)$(libdir) ; \
+ 	fi
+ 	
+ uninstall:: 
+diff -u niffsdk1.02/mk.orig/pkg.mk niffsdk1.02/mk/pkg.mk
+--- niffsdk1.02/mk.orig/pkg.mk	1996-06-12 09:23:33.000000000 +0200
++++ niffsdk1.02/mk/pkg.mk	2003-05-09 20:02:09.000000000 +0200
+@@ -22,7 +22,9 @@
+ 		); done
+ 
+ installdirs::$(pkg_mkdir)/mkinsdir
+-	$(pkg_mkdir)/mkinsdir $(INSTALLDIRS) 
++	for d in $(INSTALLDIRS); do \
++	$(pkg_mkdir)/mkinsdir $(DESTDIR)$$d ;\
++	done
+ 
+ # This should come last because we can't
+ # run make immediately after distcleaning or maintainer cleaning
+diff -u niffsdk1.02/mk.orig/top.in niffsdk1.02/mk/top.in
+--- niffsdk1.02/mk.orig/top.in	1996-06-12 09:25:04.000000000 +0200
++++ niffsdk1.02/mk/top.in	2003-05-09 20:02:33.000000000 +0200
+@@ -72,7 +72,7 @@
+ 
+ # Commands
+ 
+-AR= ar -r -cvu
++AR= ar -rcvu
+ 
+ CC=@CC@
+ CFLAGS=@CFLAGS@
