@@ -6,6 +6,7 @@ Release:	1
 License:	Public Domain
 Group:		Libraries
 Source0:	http://www.musique.umontreal.ca/personnel/Belkin/N/%{name}-%{version}.tar
+# Source0-md5:	5efcd845a9d9d720a73c47444e7fbb3f
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-shared.patch
 URL:		http://www.musique.umontreal.ca/personnel/Belkin/NIFF.doc.html
