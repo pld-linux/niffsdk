@@ -1,5 +1,5 @@
 Summary:	NIFF SDK libraries
-Summary(pl):	Biblioteki NIFF SDK
+Summary(pl.UTF-8):   Biblioteki NIFF SDK
 Name:		niffsdk
 Version:	1.02
 Release:	1
@@ -32,40 +32,40 @@ otherwise be required.
 
 This package contains NIFF shared libraries.
 
-%description -l pl
-NIFF SDK to darmowy, bêd±cy w³asno¶ci± publiczn±, niezale¿ny od
-platformy zestaw programistyczny dla programistów korzystaj±cych z
-plików w formacie NIFF (Notation Interchange File Format). Jest to
-zestaw bibliotek i narzêdzi obs³uguj±cych odczyt, zapis i poruszanie
-siê po plikach NIFF. Do³±czone s± tak¿e dokumentacja, przyk³adowy
-kod i przyk³adowe pliki NIFF. NIFF SDK umo¿liwia programistom dodanie
-mo¿liwo¶ci odczytu i zapisu plików NIFF do istniej±cego programu bez
-pisania samemu obs³uguj±cych te operacje funkcji.
+%description -l pl.UTF-8
+NIFF SDK to darmowy, bÄ™dÄ…cy wÅ‚asnoÅ›ciÄ… publicznÄ…, niezaleÅ¼ny od
+platformy zestaw programistyczny dla programistÃ³w korzystajÄ…cych z
+plikÃ³w w formacie NIFF (Notation Interchange File Format). Jest to
+zestaw bibliotek i narzÄ™dzi obsÅ‚ugujÄ…cych odczyt, zapis i poruszanie
+siÄ™ po plikach NIFF. DoÅ‚Ä…czone sÄ… takÅ¼e dokumentacja, przykÅ‚adowy
+kod i przykÅ‚adowe pliki NIFF. NIFF SDK umoÅ¼liwia programistom dodanie
+moÅ¼liwoÅ›ci odczytu i zapisu plikÃ³w NIFF do istniejÄ…cego programu bez
+pisania samemu obsÅ‚ugujÄ…cych te operacje funkcji.
 
-Ten pakiet zawiera biblioteki wspó³dzielone NIFF.
+Ten pakiet zawiera biblioteki wspÃ³Å‚dzielone NIFF.
 
 %package devel
 Summary:	NIFF SDK header files and development documentation
-Summary(pl):	Pliki nag³ówkowe i dokumentacja programisty NIFF SDK
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe i dokumentacja programisty NIFF SDK
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 NIFF SDK header files and development documentation.
 
-%description devel -l pl
-Pliki nag³ówkowe i dokumentacja programisty NIFF SDK.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe i dokumentacja programisty NIFF SDK.
 
 %package static
 Summary:	NIFF SDK static libraries
-Summary(pl):	Statyczne biblioteki NIFF SDK
+Summary(pl.UTF-8):   Statyczne biblioteki NIFF SDK
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 NIFF SDK static libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki NIFF SDK.
 
 %prep
