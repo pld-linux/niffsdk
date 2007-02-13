@@ -1,5 +1,5 @@
 Summary:	NIFF SDK libraries
-Summary(pl.UTF-8):   Biblioteki NIFF SDK
+Summary(pl.UTF-8):	Biblioteki NIFF SDK
 Name:		niffsdk
 Version:	1.02
 Release:	1
@@ -46,7 +46,7 @@ Ten pakiet zawiera biblioteki współdzielone NIFF.
 
 %package devel
 Summary:	NIFF SDK header files and development documentation
-Summary(pl.UTF-8):   Pliki nagłówkowe i dokumentacja programisty NIFF SDK
+Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja programisty NIFF SDK
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -58,7 +58,7 @@ Pliki nagłówkowe i dokumentacja programisty NIFF SDK.
 
 %package static
 Summary:	NIFF SDK static libraries
-Summary(pl.UTF-8):   Statyczne biblioteki NIFF SDK
+Summary(pl.UTF-8):	Statyczne biblioteki NIFF SDK
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
